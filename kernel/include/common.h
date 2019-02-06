@@ -17,7 +17,7 @@
 */
 #ifndef __COMMON_H__
 #define __COMMON_H__
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * This file defines all kernel structures.
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -205,6 +205,14 @@ extern u64 tick_counter;                //the tick counts from the beginning
 extern u64 step_counter;                //the step counts from the beginning
 extern int all_step_done;               //all step process ok
 extern int step_enable;                 //one step done, process another step
+extern int busy_bank0;                  //core0~191
+extern int sync_bank0;
+extern int busy_bank1;                  //core192~383
+extern int sync_bank1;
+extern int busy_bank2;                  //core384~575
+extern int sync_bank2;
+extern int busy_bank3;                  //core576~767
+extern int sync_bank3;
 extern unsigned int core_busy[32];
 extern pthread_cond_t cond;
 extern pthread_mutex_t mutex;
